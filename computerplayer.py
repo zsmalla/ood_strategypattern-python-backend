@@ -16,6 +16,6 @@ class ComputerPlayer():
 	def setStrategy(self, strategy):
 		self.strategy = strategy
 
-	def nextHand(self):
-		self.hand = self.strategy.computeNextHand()
+	def nextHand(self, lastUserHand):
+		self.hand = self.strategy.computeNextHand(lastUserHand)
 		return self.hand

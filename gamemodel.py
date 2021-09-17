@@ -5,17 +5,20 @@
 # 묵찌바 게임에 필요한 데이터를 유지하고 게임 로직 제공
 
 from handtype import HandType, GameResult
-from playingstrategy import PlayingStrategy, RandomStrategy
+from playingstrategy import PlayingStrategy, RandomStrategy, LastHandBasedStrategy
 from computerplayer import ComputerPlayer
 from handtype import HandType, GameResult
+import random
 
 class GameModel:
 	def __init__(self):
 		# 전략을 바꾸고 싶으면
-		self.computer = ComputerPlayer(RandomStrategy())
+		# self.computer = ComputerPlayer(RandomStrategy())
+		self.computer = ComputerPlayer(LastHandBasedStrategy())
 		self.currUserHand = HandType.MOOK
 		self.playingMookJiBa = False
 		self.isUserAttack = False
+		self.lastUserHand = None
 
 	# 새 게임을 할 때마다 객체를 생성하는 대신 사용 (상태 초기화)
 	def init(self):
@@ -23,8 +26,8 @@ class GameModel:
 		self.isUserAttack = False
 
 	# 다음 컴퓨터 손 계산함
-	def getComputerNextHand(self):
-		return self.computer.nextHand()
+	def getComputerNextHand(self):		# 가위바위보 -> RandomStarategy / 묵찌빠 -> LastHandBasedStrategy
+		return self.computer.nextHand(self.currUserHand) if self.playingMookJiBa else HandType.valueOf(random.randint(0,2))
 
 	# 묵찌바 게임 결과 판단
 	def playMookJiBa(self):
@@ -41,3 +44,8 @@ class GameModel:
 			self.isUserAttack = self.computer.hand.winValueOf() == self.currUserHand
 			self.playingMookJiBa = True
 			return GameResult.USERWIN if self.isUserAttack else GameResult.COMPUTERWIN
+
+if __name__ == '__main__':
+	model = GameModel()
+	# for _ in range(5) : print(model.getComputerNextHand())
+	for _ in range(10) : print(HandType.valueOf(random.randint(0, 2)))

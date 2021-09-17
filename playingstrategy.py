@@ -20,9 +20,20 @@ class RandomStrategy(PlayingStrategy):
 	def computeNextHand(self):
 		return HandType.valueOf(random.randint(0,2))
 
-'''
-def test():
+class LastHandBasedStrategy(PlayingStrategy):
+	def computeNextHand(self, lastUserHand):
+		if lastUserHand == HandType.MOOK:
+			return HandType.valueOf(random.choices(range(0, 3), weights=[1,2,2]))
+		elif lastUserHand == HandType.JI:
+			return HandType.valueOf(random.choices(range(0, 3), weights=[2,1,2]))
+		else:
+			return HandType.valueOf(random.choices(range(0, 3), weights=[2,2,1]))
+
+
+
+
+if __name__ == '__main__':
 	strategy = RandomStrategy()
 	print(strategy.computeNextHand())
 	print(strategy.computeNextHand())
-'''
+
