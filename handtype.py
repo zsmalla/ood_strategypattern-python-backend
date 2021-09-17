@@ -37,10 +37,11 @@ class GameResult(Enum):
 	COMPUTERWIN=1
 	DRAW=2
 
-'''
-def test():
-	x = HandType.MOOK
-	print(x)
-	print(x.winValueOf())
-	print(HandType.valueOf(0))
-'''
+
+# def test():
+# 	x = HandType.MOOK
+# 	print(x)
+# 	print(x.winValueOf())
+# 	print(HandType.valueOf(0))
+#
+# test()

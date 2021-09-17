@@ -79,7 +79,7 @@ class GameView(QMainWindow):
 	# 사용자가 선택한 손과 컴퓨터가 선택한 손을 가지고 가위바위보를 진행
 	def playGawiBawiBo(self):
 		self.selectButton.setDisabled(False)							# 선택 버튼 비활성화
-		gameresult = self.gamemodel.playGawiBawiBo(self.gamemodel.currUserHand)	# 가위바위보의 결과를 gameresult변수에 저장
+		gameresult = self.gamemodel.playGawiBawiBo()	# 가위바위보의 결과를 gameresult변수에 저장
 		if gameresult==GameResult.USERWIN:								# USERWIN = 0, COMPUTERWIN = 1, DRAW = 2
 			self.gameStatus.setText('사용자 승: 사용자 공격 차례')
 		elif gameresult==GameResult.COMPUTERWIN:
@@ -88,7 +88,7 @@ class GameView(QMainWindow):
 
 	# 사용자가 선택한 손과 컴퓨터가 선택한 손을 가지고 묵지빠를 진행
 	def playMookJiBa(self):
-		if self.gamemodel.playMookJiBa(self.gamemodel.currUserHand)==GameResult.DRAW:
+		if self.gamemodel.playMookJiBa()==GameResult.DRAW:
 			if self.gamemodel.isUserAttack:
 				self.gameStatus.setText('사용자 공격 차례')
 			else: self.gameStatus.setText('컴퓨터 공격 차례')
