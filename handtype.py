@@ -1,6 +1,7 @@
 # @copyright 한국기술교육대학교 컴퓨터공학부 객체지향개발론및실습
 # @version 2021년도 2학기 
 # @author 임지수
+# @studentnumber 2017136106
 # @file handtype.py
 # HandType 열거형: 가위바위보, 묵찌바 개임의 손 모습 
 # GameResult 열거형: 묵찌바, 가위바위보 게임 결과 
@@ -38,7 +39,7 @@ class GameResult(Enum):
 	DRAW=2
 
 
-# def test():
+# def test():		# 테스트 코드
 # 	x = HandType.MOOK
 # 	print(x)
 # 	print(x.winValueOf())
