@@ -31,7 +31,8 @@ class HandType(Enum):
 	def valueOf(cls, index: int) -> 'HandType':
 		if index==0: return HandType.MOOK
 		elif index==1: return HandType.JI
-		else: return HandType.BA
+		elif index==2: return HandType.BA
+		else : print("잘못된 수 전달")
 
 class GameResult(Enum):
 	USERWIN=0

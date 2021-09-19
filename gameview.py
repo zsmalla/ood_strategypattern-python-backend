@@ -105,7 +105,7 @@ class GameView(QMainWindow):
 	def userSelected(self):
 		selectedButton = self.sender()
 		if selectedButton==self.mookButton:
-			self.gamemodel.currUserHand = HandType.MOOK	
+			self.gamemodel.currUserHand = HandType.MOOK
 		elif selectedButton==self.jiButton:
 			self.gamemodel.currUserHand = HandType.JI
 		else:

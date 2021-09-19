@@ -9,6 +9,7 @@
 from handtype import HandType
 import random
 
+
 class ComputerPlayer():
 	def __init__(self, strategy):
 		self.setStrategy(strategy)
@@ -21,3 +22,7 @@ class ComputerPlayer():
 	def nextHand(self, model):
 		self.hand = self.strategy.computeNextHand(model)
 		return self.hand
+
+if __name__ == '__main__':
+	print(type(random.randint(0,2)))
+	print(random.randint(0, 2))
