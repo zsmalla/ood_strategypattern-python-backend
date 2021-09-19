@@ -13,11 +13,12 @@ import random
 class ComputerPlayer():
 	def __init__(self, strategy):
 		self.setStrategy(strategy)
-		# self.hand = HandType.MOOK		=> 기존 코드 버그(처음에 컴퓨터가 무조건 묵만 냄) 수정
+		# self.hand = HandType.MOOK		#=> 기존 코드 버그(처음에 컴퓨터가 무조건 묵만 냄) 수정
 		self.hand = HandType.valueOf(random.randint(0,2))
 	# 관계 주입
 	def setStrategy(self, strategy):
 		self.strategy = strategy
+
 
 	def nextHand(self, model):
 		self.hand = self.strategy.computeNextHand(model)

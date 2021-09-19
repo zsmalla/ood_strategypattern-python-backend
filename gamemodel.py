@@ -18,26 +18,21 @@ class GameModel:
 		# self.computer = ComputerPlayer(RandomStrategy())
 		# self.computer = ComputerPlayer(LastHandBasedStrategy())
 		self.computer = ComputerPlayer(UserAnalyzeStrategy())
-		self.currUserHand = HandType.MOOK
+		self.currUserHand = None		# default 묵에서 None으로 수정
 		self.playingMookJiBa = False
 		self.isUserAttack = False
-		self.lastUserHand = None
-		self.userdata = [5, 5, 5]		# default weight 5 : 5 : 5
 
 	# 새 게임을 할 때마다 객체를 생성하는 대신 사용 (상태 초기화)
 	def init(self):
 		self.playingMookJiBa = False
 		self.isUserAttack = False
-		self.lastUserHand = None
-		self.userdata = [5, 5, 5]
 
 	# 다음 컴퓨터 손 계산함
-	def getComputerNextHand(self):		# 가위바위보 -> RandomStarategy / 묵찌빠 -> LastHandBasedStrategy
-		return self.computer.nextHand(self) # 매개로 self 전달
+	def getComputerNextHand(self):
+		return self.computer.nextHand(self) # 매개로 객체를 전달
 
 	# 묵찌바 게임 결과 판단
 	def playMookJiBa(self):
-		self.lastUserHand = self.currUserHand
 		if self.currUserHand == self.computer.hand:
 			return GameResult.USERWIN if self.isUserAttack else GameResult.COMPUTERWIN
 		else:
