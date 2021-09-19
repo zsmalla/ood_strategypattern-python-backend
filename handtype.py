@@ -1,6 +1,6 @@
 # @copyright 한국기술교육대학교 컴퓨터공학부 객체지향개발론및실습
 # @version 2021년도 2학기 
-# @author 김상진
+# @author 임지수
 # @file handtype.py
 # HandType 열거형: 가위바위보, 묵찌바 개임의 손 모습 
 # GameResult 열거형: 묵찌바, 가위바위보 게임 결과 

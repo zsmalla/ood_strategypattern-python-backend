@@ -1,6 +1,6 @@
 # @copyright 한국기술교육대학교 컴퓨터공학부 객체지향개발론및실습
 # @version 2021년도 2학기 
-# @author 김상진
+# @author 임지수
 # @file GameModel.py
 # 묵찌바 게임에 필요한 데이터를 유지하고 게임 로직 제공
 
@@ -24,13 +24,15 @@ class GameModel:
 	def init(self):
 		self.playingMookJiBa = False
 		self.isUserAttack = False
+		self.lastUserHand = None
 
 	# 다음 컴퓨터 손 계산함
 	def getComputerNextHand(self):		# 가위바위보 -> RandomStarategy / 묵찌빠 -> LastHandBasedStrategy
-		return self.computer.nextHand(self.currUserHand) if self.playingMookJiBa else HandType.valueOf(random.randint(0,2))
+		return self.computer.nextHand(self) if self.playingMookJiBa else HandType.valueOf(random.randint(0,2))
 
 	# 묵찌바 게임 결과 판단
 	def playMookJiBa(self):
+		self.lastUserHand = self.currUserHand
 		if self.currUserHand == self.computer.hand:
 			return GameResult.USERWIN if self.isUserAttack else GameResult.COMPUTERWIN
 		else:
