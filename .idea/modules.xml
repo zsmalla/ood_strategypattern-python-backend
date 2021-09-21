@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../2017136106_LastHandBasedStrategy/.idea/2017136106_LastHandBasedStrategy.iml" filepath="$PROJECT_DIR$/../2017136106_LastHandBasedStrategy/.idea/2017136106_LastHandBasedStrategy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../2017136106_UserAnalyzeStrategy/.idea/2017136106_UserAnalyzeStrategy.iml" filepath="$PROJECT_DIR$/../2017136106_UserAnalyzeStrategy/.idea/2017136106_UserAnalyzeStrategy.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/mookjiba-lab.iml" filepath="$PROJECT_DIR$/.idea/mookjiba-lab.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../AssignmentCode_py/week1/.idea/week1.iml" filepath="$PROJECT_DIR$/../../../AssignmentCode_py/week1/.idea/week1.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../AssignmentCode_py/week2/.idea/week2.iml" filepath="$PROJECT_DIR$/../../../AssignmentCode_py/week2/.idea/week2.iml" />

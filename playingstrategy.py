@@ -5,8 +5,6 @@
 # @file playingstrategy.py
 # PlayingStrategy
 # 전략패턴: 전략 interface
-# RandomStrategy 
-# 전략패턴: 구체적인 전략 클래스
 
 from abc import ABC, abstractmethod
 from handtype import HandType
@@ -80,7 +78,7 @@ class UserAnalyzeStrategy(PlayingStrategy):
 		if model.playingMookJiBa:				# 묵찌빠의 경우
 			return [10-self.userdata[0], 10-self.userdata[1], 10-self.userdata[2]] if model.isUserAttack else self.userdata	# 공수 별도 가중치 반환
 		else:		# 가위바위보의 경우
-			return [self.userdata[2], self.userdata[0], self.userdata[1]]
+			return [self.userdata[1], self.userdata[2], self.userdata[0]]	# 사용자가 묵 많이 냄 -> 컴퓨터 빠의 가중치 ↑
 
 
 if __name__ == '__main__':		# 테스트 코드

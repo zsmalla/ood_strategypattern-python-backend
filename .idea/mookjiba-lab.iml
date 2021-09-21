@@ -8,5 +8,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="week1" />
     <orderEntry type="module" module-name="week2" />
+    <orderEntry type="module" module-name="2017136106_UserAnalyzeStrategy" />
+    <orderEntry type="module" module-name="2017136106_LastHandBasedStrategy" />
   </component>
 </module>
